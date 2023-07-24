@@ -82,7 +82,7 @@ postSchema.statics.paginate = async function ({
 postSchema.statics.vote = async function (_id, { type, user }) {
   const { n: updated } = await this.updateOne(
     {
-      _id: _id,
+      _id,
       "votes.user": user,
     },
     {
