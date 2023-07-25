@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Auth({ children, width = "xs" }) {
-  const classes = useStyles();
+  let classes = useStyles();
   return (
     <div>
       <Container component={"main"} maxWidth={width}>
@@ -37,11 +37,9 @@ export default function Auth({ children, width = "xs" }) {
           <Box mt={5}>
             <Typography variant="body2" color={"textSecondary"} align="center">
               <FormattedMessage id="copyright" />{" "}
-              <Link href={"/"} passHref>
-                <MuiLink color={"inherit"} href="/">
-                  <FormattedMessage id="app.name" />
-                </MuiLink>
-              </Link>
+              <MuiLink href={"/"}>
+                <FormattedMessage id="app.name" />
+              </MuiLink>
             </Typography>
           </Box>
         </Paper>
